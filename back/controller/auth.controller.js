@@ -36,8 +36,8 @@ exports.login = async (req, res, next) => {
             .then(success => {
                 if (success) {
                     res.status(200).json({
-                        email: user.email,
-                        jwt: jwt.sign({
+                        id: user.email,
+                        token: jwt.sign({
                             email: user.email,
                             id: user._id
                         }, process.env.JWT_TOKEN)

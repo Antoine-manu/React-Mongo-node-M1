@@ -1,0 +1,14 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label{
+    width: 100%;
+    text-align: left;
+}
+
+.c-pointer{
+    cursor: pointer;
+}

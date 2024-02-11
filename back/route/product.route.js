@@ -5,7 +5,7 @@ const auth = require("./../middleware/auth");
 const multer = require("./../middleware/multer");
 
 
-router.get('/', auth, productController.getAll);
+router.get('/', productController.getAll);
 router.post('/', auth, multer, productController.create);
 router.put('/', auth, multer, productController.update);
 router.get('/:id', auth, multer, productController.getById);

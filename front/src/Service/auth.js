@@ -1,7 +1,23 @@
-const login = async (email, password) => {
+export const signup = async(email, password) => {
     let result = await fetch("http://localhost:3000/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
         headers: {
-            Authorization : "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFudG9pbmVnZDYwNDIwQGdtYWlsLmNvbSIsImlkIjoiNjVjMzYyZWExNTNkZTI3ZGJhMGYxZjM0IiwiaWF0IjoxNzA3MzI1OTcyfQ.rXTMmhO8HC90gBk0xFOP8lFg1f-f3ZUlePgEiqE2KJ0"
+            "Content-type": "application/json"
         }
-    })
+    });
+    let data = await result.json();
+    return data;
+}
+
+export const signin = async(email, password) => {
+    let result = await fetch("http://localhost:3000/auth/signin", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: {
+            "Content-type": "application/json"
+        }
+    });
+    let data = await result.json();
+    return data;
 }

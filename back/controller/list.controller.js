@@ -2,9 +2,9 @@ const List = require("../model/list.model");
 const productService = require("../service/product.service")
 
 exports.create = async(req, res, next) => {
+    console.log(req.body.products)
     try {
         const productList = req.body.products; 
-        
         //Check si les produits existent
         const productsExist = await productService.validateProducts(productList);
         if (!productsExist) {
